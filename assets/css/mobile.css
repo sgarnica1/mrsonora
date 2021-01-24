@@ -71,10 +71,15 @@ main {
 .login .login__form {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
+.login__form .input-error{
+  border: 1px solid red;
+}
 .login__form input {
-  padding: 0 10px;
+  /* padding: 10px 10px 0px 10px; */
+  padding: 10px;
   outline: none;
   height: 50px;
   margin: 5px 0;
@@ -83,7 +88,16 @@ main {
   font-weight: 500;
   color: #333333;
 }
-.login__form input:focus {
+label {
+  cursor: pointer;
+}
+.login__error-message {
+  display: none;
+  color: red;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.login__form input:focus{
   border: 2px solid #d8aa4e;
 }
 .login__form button {
@@ -98,7 +112,6 @@ main {
   font-size: 1.4rem;
   cursor: pointer;
 }
-
 .login__form button:hover {
   background-color: #202020;
   border: 1px solid #202020;
@@ -107,7 +120,6 @@ main {
 .login__form button:focus {
   border: 2px solid #202020;
 }
-
 .login footer {
   display: flex;
   justify-content: flex-end;
@@ -121,3 +133,4 @@ main {
   text-decoration: none;
   color: #696969;
 }
+

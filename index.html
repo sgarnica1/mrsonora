@@ -6,6 +6,7 @@
   <title>Mr. Sonora - App</title>
   <link rel="stylesheet" href="./assets/css/mobile.css">
   <link rel="stylesheet" href="./assets/css/desktop.css" media="screen and (min-width: 800px)">
+  <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
   <script src="./assets/scripts/app.js" defer></script>
 </head>
 <body>
@@ -19,11 +20,15 @@
         <h1>Iniciar Sesión</h1>
         <p>Gestiona tu inventario, pedidos, clientes y ventas</p>
       </div>
-      <div class="login__form">
+      <form class="login__form">
+        <label for="email" id="email__label">Dirección de correo electrónico</label>
         <input type="email" id="email" placeholder="Dirección de correo electrónico" required autofocus>
+        <span class="login__error-message login__error-message--email" aria-live="assertive"></span>
+        <label for="password" id="password__label">Contraseña</label>
         <input type="password" id="password" placeholder="Contraseña" required>
-        <button>Iniciar Sesión</button>
-      </div>
+        <span class="login__error-message login__error-message--password" aria-live="assertive"></span>
+        <button class="login__form__submit" id="submit-bttn">Iniciar Sesión</button>
+      </form>
       <footer>
         <div>
           <a href="#">Ayuda</a>
