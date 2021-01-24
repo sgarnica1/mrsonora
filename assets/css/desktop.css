@@ -1,19 +1,12 @@
-main {
-  justify-content: start;
+body {
+  align-items: start;
 }
-
-.login {
+ 
+main {
   margin: 0;
   margin-left: 150px;
   padding: 30px;
-  width: 400px;
+  /* width: 400px; */
   min-height: 200px;
-}
-
-.login__image, .login__text, .login__form button {
-  margin-bottom: 20px;
-}
-.login footer {
-  margin-top: 20px;
-  font-size: 1.4rem;
+  width: 80%;
 }

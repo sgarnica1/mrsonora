@@ -7,12 +7,11 @@
   <link rel="stylesheet" href="./assets/css/mobile.css">
   <link rel="stylesheet" href="./assets/css/desktop.css" media="screen and (min-width: 800px)">
   <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
-  <script src="./assets/scripts/app.js" defer></script>
+  <!-- <script src="./assets/scripts/app.js" defer></script> -->
 </head>
 <body>
-  <div class="background--blured"></div>
   <main>
-    <section class="login">
+    <form action="" class="login">
       <div class="login__image">
         <img src="./assets/img/logo.png" alt="Mr. Sonora Logo">
       </div>
@@ -20,24 +19,28 @@
         <h1>Iniciar Sesión</h1>
         <p>Gestiona tu inventario, pedidos, clientes y ventas</p>
       </div>
-      <form class="login__form">
-        <label for="email" id="email__label">Dirección de correo electrónico</label>
-        <input type="email" id="email" placeholder="Dirección de correo electrónico" required autofocus>
-        <span class="login__error-message login__error-message--email" aria-live="assertive"></span>
-        <label for="password" id="password__label">Contraseña</label>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <span class="login__error-message login__error-message--password" aria-live="assertive"></span>
-        <button class="login__form__submit" id="submit-bttn">Iniciar Sesión</button>
-      </form>
-      <footer>
-        <div>
+      <section class="login__form">
+        <div class="input__container">
+          <input type="email" id="email" required>
+          <label for="email" id="email__label">Correo electrónico</label>
+          <span class="login__error-message login__error-message--email" aria-live="assertive"></span>
+        </div>
+        <div class="input__container">
+          <input type="password" id="password" required>
+          <label for="password" id="password__label">Contraseña</label>
+          <span class="login__error-message login__error-message--password" aria-live="assertive"></span>
+        </div>
+        <button class="login__form__submit" id="submit-bttn" type="submit">Iniciar Sesión</button>
+      </section>
+      <footer class="footer">
+        <div class="footer__link--help">
           <a href="#">Ayuda</a>
         </div>
-        <div>
+        <div class="footer__link--privacy">
           <a href="#">Privacidad</a>
         </div>
       </footer>
-    </section>
+    </form>
   </main>
 </body>
 </html>

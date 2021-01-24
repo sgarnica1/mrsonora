@@ -1,4 +1,6 @@
-* {
+*, 
+::before, 
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,6 +8,7 @@
 :root {
   --gold: #d8aa4e;
   --light-gray: #696969;
+  --mid-gray: #333333;
   --dark-gray: #202020;
 }
 html {
@@ -13,129 +16,139 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body {
+  width: 100%;
   background-image: url('../img/background_img.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
-
-}
-.background--blured {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 10;
-  pointer-events: none;
-}
-main {
-  height: 100%;
-  width: 100%;
+  height: 625px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 1;
-  overflow: auto;
+}
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+main {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
 }
 .login {
-  max-width: 500px;
-  width: 290px;
-  min-height: 400px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 100;
 }
-.login__image {
+.login .login__image {
   text-align: center;
 }
-.login__image img {
+.login .login__image img {
+  height: 120px;
   width: auto;
-  height: 110px;
-  margin-top: -10px;
-}
-.login .login__text h1{
-  color: #333333;
-  font-size: 2.2rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.login .login__text p{
-  color: #696969;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-weight: 500;
 }
 
-.login .login__form {
+.login .login__text h1{
+  font-weight: 500;
+  color: var(--mid-gray);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.login .login__text p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--light-gray);
+  margin-bottom: 40px;
+}
+
+.login__form .input__container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  padding: 5px;
   position: relative;
 }
-
-.login__form .input-error{
-  border: 1px solid red;
-}
-.login__form input {
-  /* padding: 10px 10px 0px 10px; */
-  padding: 10px;
-  outline: none;
-  height: 50px;
-  margin: 5px 0;
-  border: 1px solid #696969;
-  border-radius: 5px;
-  font-weight: 500;
-  color: #333333;
-}
-label {
+.login__form .input__container label {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  font-size: 1.5rem;
   cursor: pointer;
+  color: var(--light-gray);
+  transition: ease all 0.5s;
 }
-.login__error-message {
-  display: none;
-  color: red;
-  font-size: 1.4rem;
+.login__form .input__container input {
+  margin: 10px 0 10px 0;
+  border: none;
+  outline: none;
+  color: var(--light-gray);
+  font-size: 1.6rem;
+  padding-left: 5px;
+}
+.login__form .input__container:focus-within {
+  border: solid 1px var(--gold);
+}
+.login__form .input__container input:focus {
+  color: var(--mid-gray);
+  margin-top: 20px;
   margin-bottom: 5px;
 }
-.login__form input:focus{
-  border: 2px solid #d8aa4e;
-}
-.login__form button {
-  border-radius: 5px;
-  border: 1px solid #d8aa4e;
-  background-color: #d8aa4e;
-  color: #202020;
-  outline: none;
-  height: 50px;
-  margin: 5px 0;
-  font-weight: bold;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-.login__form button:hover {
-  background-color: #202020;
-  border: 1px solid #202020;
-  color: white;
-}
-.login__form button:focus {
-  border: 2px solid #202020;
-}
-.login footer {
-  display: flex;
-  justify-content: flex-end;
+.login__form .input__container input:focus ~ label {
+  top: 5px;
   font-size: 1.2rem;
-  font-weight: bold;
+  color: var(--gold);
 }
-.login footer div {
-  margin: 10px 10px 0px 10px;
+.login__form .input__container input:valid ~ label {
+  top: 5px;
+  font-size: 1.2rem;
 }
-.login footer a {
-  text-decoration: none;
-  color: #696969;
+.login__form .input__container input:valid {
+  margin: 20px 0 5px 0;
+}
+.login__form .login__form__submit {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 40px;
+  background-color: var(--gold);
+  color: var(--dark-gray);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }
 
+.login__form .login__form__submit:hover {
+  color: white;
+  background-color: var(--mid-gray);
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+footer div {
+  margin: 10px 10px 0 10px;
+}
+footer div a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
