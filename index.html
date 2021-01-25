@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="./assets/css/mobile.css">
   <link rel="stylesheet" href="./assets/css/desktop.css" media="screen and (min-width: 800px)">
   <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
-  <!-- <script src="./assets/scripts/app.js" defer></script> -->
+  <script src="./assets/scripts/app.js" defer></script>
 </head>
 <body>
   <main>
-    <form action="" class="login">
+    <form action="" class="login" id='login-form' novalidate>
       <div class="login__image">
         <img src="./assets/img/logo.png" alt="Mr. Sonora Logo">
       </div>
@@ -20,16 +20,17 @@
         <p>Gestiona tu inventario, pedidos, clientes y ventas</p>
       </div>
       <section class="login__form">
-        <div class="input__container">
-          <input type="email" id="email" required>
+        <div class="input__container" id="email__container">
+          <input type="email" id="email" required autofocus>
           <label for="email" id="email__label">Correo electrónico</label>
-          <span class="login__error-message login__error-message--email" aria-live="assertive"></span>
         </div>
-        <div class="input__container">
+        <span class="login__error-message login__error-message--email" aria-live="assertive"></span>
+        <div class="input__container" id="password__container">
           <input type="password" id="password" required>
+          <span class="password--toggle invisible" id="password-toggle"></span>
           <label for="password" id="password__label">Contraseña</label>
-          <span class="login__error-message login__error-message--password" aria-live="assertive"></span>
         </div>
+        <span class="login__error-message login__error-message--password" aria-live="assertive"></span>
         <button class="login__form__submit" id="submit-bttn" type="submit">Iniciar Sesión</button>
       </section>
       <footer class="footer">
