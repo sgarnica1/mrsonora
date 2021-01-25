@@ -89,7 +89,7 @@ main {
 }
 .login__form .input__container label {
   position: absolute;
-  top: 16px;
+  top: 14px;
   left: 10px;
   font-size: 1.5rem;
   cursor: pointer;
