@@ -23,7 +23,7 @@ body {
   background-size: cover;
   height: 625px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   z-index: 1;
@@ -40,6 +40,7 @@ body::after {
 }
 
 main {
+  margin-top: 20px;
   background: white;
   border-radius: 10px;
   padding: 20px;
@@ -88,7 +89,7 @@ main {
 }
 .login__form .input__container label {
   position: absolute;
-  top: 13px;
+  top: 16px;
   left: 10px;
   font-size: 1.5rem;
   cursor: pointer;

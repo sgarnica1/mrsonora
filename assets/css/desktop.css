@@ -1,12 +1,16 @@
 body {
   align-items: start;
+  justify-content: center;
 }
  
 main {
   margin: 0;
   margin-left: 150px;
   padding: 30px;
-  /* width: 400px; */
   min-height: 200px;
   width: 80%;
+}
+
+.login__form .input__container label {
+  top: 13px;
 }
