@@ -49,7 +49,7 @@ const inputNoFocus = () => {
     emailLabel.style.fontSize = '1.2rem';
   } else {
     userEmail.style.margin = '10px 0 10px 0';
-    emailLabel.style.top = '13px';
+    emailLabel.style.top = '16px';
     emailLabel.style.fontSize = '1.5rem';
   }
 }
